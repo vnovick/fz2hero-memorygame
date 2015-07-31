@@ -1,0 +1,26 @@
+{
+  "name": "vndev-memoryGame",
+  "private": true,
+  "version": "0.0.0",
+  "description": "React / Flux Dynamicly build application",
+  "repository": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.10",
+    "npm": ">= 2.1"
+  },
+  "dependencies": {
+    "css-loader": "^0.15.6",
+    "extract-text-webpack-plugin": "^0.8.2",
+    "file-loader": "^0.8.4",
+    "react": "^0.13.3",
+    "sass-loader": "^1.0.3",
+    "style-loader": "^0.12.3",
+    "webpack": "^1.10.5",
+    "webpack-dev-server": "^1.10.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "webpack-dev-server --progress --colors --config"
+  }
+}

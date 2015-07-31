@@ -1,0 +1,22 @@
+@import '../colors';
+.header {
+  height: 64px;
+  display: block;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  background-color: $mainThemeColor;
+  padding: 0 16px;
+  &__title {
+    padding: 21px;
+    font-size:2rem;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+  }
+}
+
