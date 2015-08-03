@@ -1,4 +1,5 @@
 var path = require('path');
+var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     resolve: {
@@ -17,7 +18,8 @@ module.exports = {
     devServer: {
         contentBase: ".",
         inline: true,
-        watch: true
+        watch: true,
+        hot: true
     },
     module: {
         loaders: [
@@ -45,6 +47,8 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NamedModulesPlugin(),
         new ExtractTextPlugin("styles.css?[hash]")
     ]
 };
