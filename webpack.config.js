@@ -37,7 +37,7 @@ module.exports = {
             },
             {
                 test: /\.js$/,
-                loaders: ["babel-loader?optional[]=runtime"],
+                loaders: ["react-hot","babel-loader?optional[]=runtime"],
                 exclude: [
                     /node_modules/,
                     /libs/,
