@@ -209,31 +209,31 @@
 
 
     <!--</style>-->
-    <!--<script src="vendor/JSXTransformer.js"></script>-->
-    <!--<script src="vendor/react.min.js"></script>-->
+    <script src="vendor/JSXTransformer.js"></script>
+    <script src="vendor/react.min.js"></script>
 </head>
 <body>
 
-<!--<script type="text/jsx">-->
-    <!--var WelcomeScreen = React.createClass({-->
-        <!--render: function() {-->
-            <!--return (-->
-                    <!--<div className="welcomeScreen">-->
-                        <!--<div className="welcomeScreen__content">-->
-                            <!--<h1 className="welcomeScreen__header">{this.props.caption}</h1>-->
-                            <!--<img className="welcomeScreen__logo" src="assets/images/logo.png"/>-->
-                            <!--<a className="welcomeScreen__copyright" href="sdfsd">Vladimir Novick</a>-->
-                        <!--</div>-->
-                    <!--</div>-->
-            <!--);-->
-        <!--}-->
-    <!--});-->
+<script type="text/jsx">
+    var WelcomeScreen = React.createClass({
+        render: function() {
+            return (
+                    <div className="welcomeScreen">
+                        <div className="welcomeScreen__content">
+                            <h1 className="welcomeScreen__header">{this.props.caption}</h1>
+                            <img className="welcomeScreen__logo" src="assets/images/logo.png"/>
+                            <a className="welcomeScreen__copyright" href="sdfsd">Vladimir Novick</a>
+                        </div>
+                    </div>
+            );
+        }
+    });
 
-    <!--React.render(-->
-            <!--<WelcomeScreen caption="FZ2Hero"/>,-->
-            <!--document.body-->
-    <!--);-->
-<!--</script>-->
+    React.render(
+            <WelcomeScreen caption="FZ2Hero"/>,
+            document.body
+    );
+</script>
 <script src="dist/bundle.js"></script>
 </body>
 </html>
