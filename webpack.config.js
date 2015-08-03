@@ -1,12 +1,13 @@
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var webpack = require('webpack')
 module.exports = {
     resolve: {
         modulesDirectories: ["node_modules", "."],
         extensions: ["", ".js", ".min.js", ".scss"]
     },
     entry: {
-        app: ['entry.js']
+        app: ['entry.js',"webpack/hot/dev-server"]
     },
     devtool: "source-map",
     output: {
@@ -17,7 +18,8 @@ module.exports = {
     devServer: {
         contentBase: ".",
         inline: true,
-        watch: true
+        watch: true,
+        hot: true
     },
     module: {
         loaders: [
@@ -35,7 +37,7 @@ module.exports = {
             },
             {
                 test: /\.js$/,
-                loaders: ["babel-loader?optional[]=runtime"],
+                loaders: ["react-hot","babel-loader?optional[]=runtime"],
                 exclude: [
                     /node_modules/,
                     /libs/,
@@ -45,6 +47,8 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NamedModulesPlugin(),
         new ExtractTextPlugin("styles.css?[hash]")
     ]
 };
