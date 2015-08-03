@@ -92,9 +92,6 @@ class AppStore extends EventEmitter {
         this._gameState = obj;
     }
 
-    imageClick(){
-
-    }
 
     get welcomeState(){
         return this.welcome;
