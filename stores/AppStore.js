@@ -63,8 +63,8 @@ class AppStore extends EventEmitter {
     generateImages(){
         let images = []
         for (let i = 0; i<8; i++){
-            let rand = Math.floor(Math.random() * (1200 - 900 + 1) + 900);
-            let img = 'http://loremflickr.com/320/240?random=' + rand + '.jpg';
+            let rand = Math.floor(Math.random() * (331));
+            let img = 'assets/images/teams/image_' + rand + '.png';
             let _img = (new Image()).src = img;
             images.push({ src: img, visible: false, id: rand });
             images.push({ src: img, visible: false, id: rand });
