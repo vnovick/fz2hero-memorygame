@@ -1,4 +1,3 @@
-require("styles/components/menu.scss");
 var React = require('react');
 
 var Menu = React.createClass({displayName: "Menu",

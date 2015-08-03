@@ -1,4 +1,3 @@
-require("styles/app.scss")
 var React = require('react');
 var WelcomeScreen = require('components/WelcomeScreen');
 var Header = require('components/Header');
