@@ -1,37 +1,57 @@
 require("styles/app.scss")
-var React = require('react');
-var WelcomeScreen = require('components/WelcomeScreen');
-var Header = require('components/Header');
-var Menu = require('components/Menu');
-var Game = require('components/Game');
-var Score = require('components/Score');
+import React from 'react';
+import WelcomeScreen from 'components/WelcomeScreen';
+import Header from 'components/Header';
+import Menu from 'components/Menu';
+import Game from 'components/Game';
+import AppActions from 'actions/AppActions';
+import AppStore from 'stores/AppStore';
 
-var App = React.createClass({displayName: "App",
-    getInitialState: function(){
-        return {
-            welcome: true
-        };
-    },
-    handleWelcomeClick: function(){
-        this.setState({welcome: false})
-    },
-    getValidView: function(){
+function getAppState(){
+    return {welcome: AppStore.welcomeState };
+}
+class App extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = getAppState();
+    }
+
+    _onChange() {
+        this.setState(getAppState());
+    }
+
+    componentDidMount() {
+        AppStore.addChangeListener(this._onChange.bind(this));
+    }
+
+    componentWillUnmount() {
+     AppStore.removeChangeListener(this._onChange.bind(this));
+    }
+
+    handleWelcomeClick(){
+        AppActions.startApp();
+        //this.setState({welcome: false})
+    }
+
+    getValidView(){
+
         return this.state.welcome ?
-            React.createElement(WelcomeScreen, {caption: this.props.name, clickHandler: this.handleWelcomeClick}) :
-            React.createElement("div", {className: "main-screen"},
-                React.createElement(Header,{caption: "Welcome to " + this.props.name}),
-                React.createElement(Menu, null),
-                React.createElement(Game, null),
-                React.createElement(Score, null)
-            );
-    },
-    render: function () {
+            <WelcomeScreen caption={this.props.name} clickHandler={this.handleWelcomeClick.bind(this)}/> :
+            <div className="main-screen">
+                <Header caption={`Welcome to ${this.props.name}`}/>
+                <Menu/>
+                <Game/>
+            </div>;
+
+    }
+
+    render() {
         return (
             React.createElement("div", {className: "app"},
                 this.getValidView()
             )
         );
     }
-});
+}
 
-module.exports = App;
+export default App;

@@ -32,6 +32,15 @@ module.exports = {
                     name: '[name][hash].[ext]',
                     limit: 10000
                 }
+            },
+            {
+                test: /\.js$/,
+                loaders: ["babel-loader?optional[]=runtime"],
+                exclude: [
+                    /node_modules/,
+                    /libs/,
+                    /vendor/
+                ]
             }
         ]
     },

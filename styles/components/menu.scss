@@ -4,7 +4,7 @@
   bottom: 0;
   right: 0;
   height: 100vh;
-  width: 40vw;
+  width: 20vw;
   overflow: hidden;
 }
 
@@ -72,7 +72,7 @@
   padding: 10% 15%;
   position: absolute;
   z-index: 3;
-  top: 0;
+  top: 64px;
   right: 0;
 }
 
@@ -105,8 +105,8 @@ nav {
 
   a {
     text-decoration: none;
-    font-size: 5vw;
-    color: tomato;
+    font-size: 3vw;
+    color: #fff;
     font-weight: 300;
   }
 }
