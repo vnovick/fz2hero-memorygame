@@ -4,7 +4,6 @@ var WelcomeScreen = require('components/WelcomeScreen');
 var Header = require('components/Header');
 var Menu = require('components/Menu');
 var Game = require('components/Game');
-var Score = require('components/Score');
 
 var App = React.createClass({displayName: "App",
     getInitialState: function(){
@@ -21,8 +20,7 @@ var App = React.createClass({displayName: "App",
             React.createElement("div", {className: "main-screen"},
                 React.createElement(Header,{caption: "Welcome to " + this.props.name}),
                 React.createElement(Menu, null),
-                React.createElement(Game, null),
-                React.createElement(Score, null)
+                React.createElement(Game, null)
             );
     },
     render: function () {
