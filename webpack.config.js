@@ -1,9 +1,8 @@
 var path = require('path');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     resolve: {
         modulesDirectories: ["node_modules", "."],
-        extensions: ["", ".js", ".min.js", ".scss"]
+        extensions: ["", ".js", ".min.js"]
     },
     entry: {
         app: ['entry.js']
@@ -18,24 +17,5 @@ module.exports = {
         contentBase: ".",
         inline: true,
         watch: true
-    },
-    module: {
-        loaders: [
-            {
-                test: /\.scss$/,
-                loader: ExtractTextPlugin.extract("css-loader?sourceMap!sass-loader?sourceMap&sourceMapContents")
-            },
-            {
-                test: /\.(ttf|eot|woff|svg|jpe?g|gif|png)[\?]?.*$/,
-                loader: 'url',
-                query: {
-                    name: '[name][hash].[ext]',
-                    limit: 10000
-                }
-            }
-        ]
-    },
-    plugins: [
-        new ExtractTextPlugin("styles.css?[hash]")
-    ]
+    }
 };

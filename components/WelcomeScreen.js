@@ -1,4 +1,3 @@
-require("styles/components/welcomeScreen.scss")
 var React = require("react");
 
 var WelcomeScreen = React.createClass({displayName: "WelcomeScreen",

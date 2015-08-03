@@ -1,4 +1,3 @@
-require("styles/components/game.scss");
 var React = require('react');
 
 var Game = React.createClass({

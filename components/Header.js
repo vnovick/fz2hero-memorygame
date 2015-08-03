@@ -1,4 +1,3 @@
-require("styles/components/header.scss");
 var React = require('react');
 
 var Header = React.createClass({
